@@ -3858,7 +3858,7 @@ img.u-pull-left {
 
 .clients__slide img {
     margin     : 0;
-    opacity    : .15;
+    opacity    : .9;
     transform  : scale(0.9);
     transition : all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
