@@ -3596,6 +3596,38 @@ img.u-pull-left {
 .service-icon--ecommerce {
     background-image : url(../images/icons/services/icon-ecommerce.svg);
 }
+.service-icon--autowork{
+    background-image: url(../images/icons/services/—Pngtree—automation\ line\ icon\ vector_9060714.png);
+}
+.service-icon--datadecision {
+    background-image: url(../images//icons/services/brain.png);
+}
+.service-icon--operations{
+    
+    background-image: url(../images//icons/services/—Pngtree—flat\ design\ illustration\ of\ a_21235436.png);
+
+}
+.service-icon--customerai{
+    background-image: url(../images//icons/services/ChatGPT\ Image\ Jul\ 7\,\ 2025\,\ 09_01_52\ PM.png);
+
+
+}
+.service-icon--reducerisk {
+    background-image: url("../images/icons/services/ChatGPT Image Jul 7, 2025, 09_10_39 PM.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
+}
+
+
+.service-icon--fastinnovate{
+    background-image: url(../images//icons/services/—Pngtree—lightbulb\ icon\ -\ symbol\ of_20978119.png);
+    
+}
+
+
 
 /* ------------------------------------------------------------------- 
  * responsive:
@@ -3857,17 +3889,19 @@ img.u-pull-left {
 }
 
 .clients__slide img {
-    margin     : 0;
-    opacity    : .9;
-    transform  : scale(0.9);
-    transition : all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+    margin: 0;
+    opacity: 0.9;
+    transform: scale(0.9);
+    transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+    filter: brightness(0) invert(1); /* Makes black logo appear white */
+    background-color: transparent;
 }
-
 .clients__slide:focus img,
 .clients__slide:hover img {
-    transform : scale(1);
-    opacity   : 1;
+    transform: scale(1);
+    opacity: 1;
 }
+
 
 /* ------------------------------------------------------------------- 
  * ## video block
@@ -3895,13 +3929,13 @@ img.u-pull-left {
 }
 
 .video-block__bg-left {
-    background-image : url(../images/video-bg-01.jpg);
+    background-image : url(../images/video-bg-left.png);
     left             : 0;
     right            : 50%;
 }
 
 .video-block__bg-right {
-    background-image : url(../images/video-bg-02.jpg);
+    background-image : url(../images/video-bg-right.webp);
     left             : 50%;
     right            : 0;
 }

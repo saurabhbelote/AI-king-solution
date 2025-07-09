@@ -339,23 +339,37 @@
    /* video Lightbox
     * ------------------------------------------------------ */
     const ssVideoLightbox = function() {
+    const videoLink = document.querySelector('.video-link');
+    if (!videoLink) return;
 
-        const videoLink = document.querySelector('.video-link');
-        if (!videoLink) return;
+    videoLink.addEventListener('click', function(event) {
+        event.preventDefault();
 
-        videoLink.addEventListener('click', function(event) {
+        const vLink = this.getAttribute('href');
 
-            const vLink = this.getAttribute('href');
-            const iframe = "<iframe src='" + vLink + "' frameborder='0'></iframe>";
+        // Extract YouTube video ID from short URL
+        const youtubeId = vLink.includes('youtu.be/')
+            ? vLink.split('youtu.be/')[1]
+            : null;
 
-            event.preventDefault();
+        if (!youtubeId) return;
 
-            const instance = basicLightbox.create(iframe);
-            instance.show()
+        const embedLink = `https://www.youtube.com/embed/${youtubeId}?autoplay=1`;
 
-        });
+        const iframe = `
+            <iframe width="960" height="540"
+                    src="${embedLink}"
+                    frameborder="0"
+                    allowfullscreen
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
+            </iframe>
+        `;
 
-    }; // end ssVideoLightbox
+        const instance = basicLightbox.create(iframe);
+        instance.show();
+    });
+};
+ ssVideoLightbox
 
 
    /* alert boxes
@@ -441,3 +455,141 @@
     })();
 
 })(document.documentElement);
+
+  document.addEventListener('DOMContentLoaded', function() {
+        // Initialize Technology Slider
+        var techSwiper = new Swiper('.clients', {
+            slidesPerView: 2,
+            spaceBetween: 20,
+            autoplay: {
+                delay: 2000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+            },
+            loop: true,
+            speed: 800,
+            grabCursor: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                400: {
+                    slidesPerView: 3,
+                    spaceBetween: 15
+                },
+                576: {
+                    slidesPerView: 3,
+                    spaceBetween: 20
+                },
+                768: {
+                    slidesPerView: 4,
+                    spaceBetween: 25
+                },
+                992: {
+                    slidesPerView: 5,
+                    spaceBetween: 30
+                },
+                1200: {
+                    slidesPerView: 6,
+                    spaceBetween: 30
+                }
+            }
+        });
+    });
+    const testimonialsSwiper = new Swiper('.testimonial-slider', {
+    slidesPerView: 2,
+    spaceBetween: 30,
+    loop: true,
+    autoplay: {
+        delay: 4000,
+        disableOnInteraction: false
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+    },
+    breakpoints: {
+        0: {
+            slidesPerView: 1,
+            spaceBetween: 20
+        },
+        768: {
+            slidesPerView: 1,
+            spaceBetween: 25
+        },
+        992: {
+            slidesPerView: 2,
+            spaceBetween: 30
+        }
+    }
+    
+});
+
+const ssVideoLightbox = function() {
+    const videoLink = document.querySelector('.video-link');
+    if (!videoLink) return;
+
+    videoLink.addEventListener('click', function(event) {
+        event.preventDefault();
+
+        const vLink = this.getAttribute('href');
+        const youtubeId = vLink.split('youtu.be/')[1];
+        const embedLink = `https://www.youtube.com/embed/${youtubeId}?autoplay=1`;
+
+        const iframe = `<iframe width="960" height="540" src="${embedLink}" frameborder="0" allowfullscreen allow="autoplay"></iframe>`;
+
+        const instance = basicLightbox.create(iframe);
+        instance.show();
+    });
+};
+
+document.addEventListener('DOMContentLoaded', function() {
+    var techSwiper = new Swiper('.clients', {
+        slidesPerView: 2,
+        spaceBetween: 20,
+        autoplay: {
+            delay: 2000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+        },
+        loop: true,
+        speed: 800,
+        grabCursor: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+            400: {
+                slidesPerView: 3,
+                spaceBetween: 15
+            },
+            576: {
+                slidesPerView: 3,
+                spaceBetween: 20
+            },
+            768: {
+                slidesPerView: 4,
+                spaceBetween: 25
+            },
+            992: {
+                slidesPerView: 5,
+                spaceBetween: 30
+            },
+            1200: {
+                slidesPerView: 6,
+                spaceBetween: 30
+            }
+        }
+    });
+});
+
